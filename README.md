@@ -59,3 +59,9 @@ cv2.putText(frame, f'Store: {store}', (50, 150), font, 1, (255, 255, 255), 2, cv
 cv2.imshow('Product Information', frame)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+response = openai.Image.create(
+  prompt="a white siamese cat",
+  n=1,
+  size="1024x1024"
+)
+image_url = response['data'][0]['url']
